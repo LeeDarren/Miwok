@@ -21,6 +21,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.TextView;
 
+import static com.example.android.miwok.R.id.numbers;
+import static com.example.android.miwok.R.id.start;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -28,11 +31,17 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         // Set the content of the activity to use the activity_main.xml layout file
         setContentView(R.layout.activity_main);
-        //Testing a click listener with a complete other class
-        NumbersClickListener clickListener = new NumbersClickListener();
         //Find the veiw that shows the numbers category
         TextView numbers = (TextView)findViewById(R.id.numbers);
-        numbers.setOnClickListener(clickListener);
+        numbers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //create a new intent to open the {@link NumbersActivity}
+                Intent numbersIntent = new Intent(MainActivity.this, NumbersActivity.class);
+                //start the new activity
+                startActivity(numbersIntent);
+            }
+        });
     }
 
     public void openNumbersList(View view) {
