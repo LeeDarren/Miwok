@@ -16,25 +16,23 @@ public class NumbersActivity extends AppCompatActivity {
         setContentView(R.layout.activity_numbers);
         //array of english words
         ArrayList<String> words = new ArrayList<>();
-        words.add(0,"one");
-        words.add(1,"two");
-        words.add(2,"three");
-        words.add(3,"four");
-        words.add(4,"five");
-        words.add(5,"six");
-        words.add(6,"seven");
-        words.add(7,"eight");
-        words.add(8,"nine");
-        words.add(9,"ten");
+        words.add(0, "one");
+        words.add(1, "two");
+        words.add(2, "three");
+        words.add(3, "four");
+        words.add(4, "five");
+        words.add(5, "six");
+        words.add(6, "seven");
+        words.add(7, "eight");
+        words.add(8, "nine");
+        words.add(9, "ten");
         //loop through array to display values in Logcat
-        int index = 0;
         LinearLayout rootView = (LinearLayout) findViewById(R.id.rootView);
-        while (index<words.size()){
-            Log.v("NumbersActivity","Word at index "+index+": "+words.get(index));
+        for (int index = 0; index < words.size(); index++) {
+            Log.v("NumbersActivity", "Word at index " + index + ": " + words.get(index));
             TextView wordView = new TextView(this);
             wordView.setText(words.get(index));
             rootView.addView(wordView);
-            index++;
         }
     }
 }
