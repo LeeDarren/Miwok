@@ -30,7 +30,7 @@ public class NumbersActivity extends AppCompatActivity {
         words.add(9, "ten");
 
         ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_list_item_1, words);
+                R.layout.list_item, words);
 
         ListView listView = (ListView) findViewById(R.id.list);
 
