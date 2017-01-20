@@ -9,11 +9,13 @@ public class Word {
 
     private String mDefaultTranslation;
     private String mMiwokTranslation;
+    private int mImageResourceID;
 
     // basic public constructor
     public Word(String defaultTranslation, String miwokTranslation) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
+
     }
 
     /**
@@ -22,10 +24,16 @@ public class Word {
     public String getmDefaultTranslation() {
         return mDefaultTranslation;
     }
+
     /*
      * Get Miwok translation
      */
     public String getmMiwokTranslation() {
         return mMiwokTranslation;
     }
+
+    /*
+     * Get resource id of image
+     */
+    public int getmImageResourceID() { return mImageResourceID; }
 }
