@@ -30,8 +30,8 @@ public class WordAdapter extends ArrayAdapter {
      * @param convertView is the recycled view element from the listView
      *  for us convertView is our layout list_item.xml
      * @param parent is the viewGroup (Listview), which holds it all
-     *  for us parent is the ListView activity_numbers.xml
-     */
+     *  for us parent is the ListView word_list   */
+    @NonNull
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
