@@ -1,7 +1,10 @@
 package com.example.android.miwok;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +14,8 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import static android.R.attr.y;
+
 /**
  * This adapter is specifically for the Word class and unique list_item view
  * that displays Miwok words and a translation
@@ -18,11 +23,14 @@ import java.util.ArrayList;
 
 public class WordAdapter extends ArrayAdapter {
 
+    int mColorResourceID;
     /*
      * basic constructor
      */
-    public WordAdapter(Activity context, ArrayList<Word> words){
+    public WordAdapter(Activity context, ArrayList<Word> words, int colorChosen){
         super(context, 0, words);
+        mColorResourceID=colorChosen;
+        Log.v("WordAdapter","We're setting the color to: "+mColorResourceID);
     }
 
     /*
@@ -43,6 +51,10 @@ public class WordAdapter extends ArrayAdapter {
         if(listItemView == null){
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.list_item, parent, false);
         }
+        //set the color
+        View textContainer = listItemView.findViewById(R.id.text_container);
+        listItemView.setBackgroundColor(ContextCompat.getColor(getContext(), mColorResourceID));
+
 
         // Get the word at the position on the list
         Word currentWord = (Word) getItem(position);
