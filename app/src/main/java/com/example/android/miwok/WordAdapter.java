@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -49,12 +50,17 @@ public class WordAdapter extends ArrayAdapter {
         //Find the textview in the first slot, which is for Miwok
         TextView miwokTextView = (TextView) listItemView.findViewById(R.id.miwok_text_view);
         //Set the text to Miwok word
-        miwokTextView.setText(currentWord.getmMiwokTranslation());
+        miwokTextView.setText(currentWord.getMiwokTranslation());
 
         //Find the textview in the second slot, which is for Default
         TextView defaultTextView = (TextView) listItemView.findViewById(R.id.default_text_view);
         //Set the text to default word
-        defaultTextView.setText(currentWord.getmDefaultTranslation());
+        defaultTextView.setText(currentWord.getDefaultTranslation());
+
+        //Find the imageview for the icon
+        ImageView iconImageView = (ImageView) listItemView.findViewById(R.id.icon_image_view);
+        //Set the source to image
+        iconImageView.setImageResource(currentWord.getImageResourceID());
 
         return listItemView;
     }

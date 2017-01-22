@@ -13,36 +13,39 @@ public class Word {
     private String mMiwokTranslation;
     private int mImageResourceID;
 
-    // basic public constructor, with word pair
+    /** basic public constructor, with word pair
+     * @param defaultTranslation word in default language
+     * @param miwokTranslation word in miwok
+     */
     public Word(String defaultTranslation, String miwokTranslation) {
         mDefaultTranslation = defaultTranslation;
         mMiwokTranslation = miwokTranslation;
     }
-
     /** Constructor, with word pair and imageID
-     * @param defaultTranslation
+     * @param defaultTranslation word in default language
+     * @param miwokTranslation word in miwok
+     * @param imageResourceID icon image for word
      */
     public Word(String defaultTranslation, String miwokTranslation, int imageResourceID){
         this(defaultTranslation,miwokTranslation);
         mImageResourceID = imageResourceID;
     }
-
     /**
      * Get default translation
      */
-    public String getmDefaultTranslation() {
+    public String getDefaultTranslation() {
         return mDefaultTranslation;
     }
 
     /*
      * Get Miwok translation
      */
-    public String getmMiwokTranslation() {
+    public String getMiwokTranslation() {
         return mMiwokTranslation;
     }
 
     /*
      * Get resource id of image
      */
-    public int getmImageResourceID() { return mImageResourceID; }
+    public int getImageResourceID() { return mImageResourceID; }
 }
