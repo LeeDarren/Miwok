@@ -11,7 +11,9 @@ public class Word {
 
     private String mDefaultTranslation;
     private String mMiwokTranslation;
-    private int mImageResourceID;
+    private int mImageResourceID=NO_IMAGE_PROVIDED;
+
+    private static final int NO_IMAGE_PROVIDED = -1;
 
     /** basic public constructor, with word pair
      * @param defaultTranslation word in default language
@@ -48,4 +50,7 @@ public class Word {
      * Get resource id of image
      */
     public int getImageResourceID() { return mImageResourceID; }
+
+    //Returns true if there is an image
+    public boolean hasImage() { return mImageResourceID != NO_IMAGE_PROVIDED; }
 }
