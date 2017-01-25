@@ -1,23 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:minHeight="@dimen/list_item_height">
+    android:layout_height="@dimen/list_item_height"
+    android:minHeight="@dimen/list_item_height"
+    tools:background="@color/category_numbers">
 
     <ImageView
         android:id="@+id/icon_image_view"
         style="@style/IconWordStyle"
         android:src="@mipmap/ic_launcher"
-        tools:src="@mipmap/ic_launcher"/>
+        tools:src="@mipmap/ic_launcher" />
 
     <LinearLayout
         android:id="@+id/text_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:paddingLeft="16dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@id/icon_image_view"
+        android:gravity="center_vertical"
         android:orientation="vertical"
-        android:gravity="center_vertical">
+        android:paddingLeft="16dp">
 
         <TextView
             android:id="@+id/miwok_text_view"
@@ -32,5 +37,14 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:text="one" />
+
     </LinearLayout>
-</LinearLayout>
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="16dp"
+        android:src="@drawable/ic_play_arrow_white_24dp" />
+</RelativeLayout>
