@@ -30,7 +30,6 @@ public class WordAdapter extends ArrayAdapter {
     public WordAdapter(Activity context, ArrayList<Word> words, int colorChosen){
         super(context, 0, words);
         mColorResourceID=colorChosen;
-        Log.v("WordAdapter","We're setting the color to: "+mColorResourceID);
     }
 
     /*
